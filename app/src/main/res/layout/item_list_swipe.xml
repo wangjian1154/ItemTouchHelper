@@ -6,15 +6,46 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/tv_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:paddingBottom="20dp"
+            android:paddingTop="20dp">
 
-        
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="少时诵诗书"
+                android:textSize="20sp" />
 
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:background="#f33213">
+
+            <TextView
+                android:id="@+id/tv_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="删除"
+                android:textColor="#ffffff"
+                android:textSize="20sp" />
+
+        </FrameLayout>
     </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/decoration_color" />
 
 </LinearLayout>

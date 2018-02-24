@@ -1,4 +1,4 @@
-package com.wj.itemtouchhelper;
+package com.wj.itemtouchhelper.listener;
 
 /**
  * Created by wj on 2018/2/24.

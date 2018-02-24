@@ -6,6 +6,10 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
 
+import com.wj.itemtouchhelper.adapter.ListDragAdapter;
+import com.wj.itemtouchhelper.callback.ItemDragHelperCallBack;
+import com.wj.itemtouchhelper.listener.OnItemDragListener;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -40,15 +44,7 @@ public class LongDragActivity extends AppCompatActivity {
             @Override
             public void onItemMove(int startPos, int endPos) {
                 //交换变换位置的集合数据
-                if (startPos < endPos) {
-                    for (int i = startPos; i < endPos; i++) {
-                        Collections.swap(list, i, i + 1);
-                    }
-                } else {
-                    for (int i = startPos; i > endPos; i--) {
-                        Collections.swap(list, i, i - 1);
-                    }
-                }
+                Collections.swap(list, startPos, endPos);
                 adapter.notifyItemMoved(startPos, endPos);
             }
         }));

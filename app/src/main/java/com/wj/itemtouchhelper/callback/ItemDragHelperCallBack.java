@@ -1,9 +1,11 @@
-package com.wj.itemtouchhelper;
+package com.wj.itemtouchhelper.callback;
 
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.support.v7.widget.helper.ItemTouchHelper;
+
+import com.wj.itemtouchhelper.listener.OnItemDragListener;
 
 /**
  * Created by wj on 2018/2/24.
@@ -30,10 +32,10 @@ public class ItemDragHelperCallBack extends ItemTouchHelper.Callback {
         RecyclerView.LayoutManager manager = recyclerView.getLayoutManager();
         int dragFlags;
         if (manager instanceof GridLayoutManager || manager instanceof StaggeredGridLayoutManager) {
-            //网格布局允许上下左右拖动
+            //网格布局管理器允许上下左右拖动
             dragFlags = ItemTouchHelper.UP | ItemTouchHelper.DOWN | ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT;
         } else {
-            //其他布局允许上下拖动
+            //其他布局管理器允许上下拖动
             dragFlags = ItemTouchHelper.UP | ItemTouchHelper.DOWN;
         }
         return makeMovementFlags(dragFlags, 0);
@@ -49,6 +51,7 @@ public class ItemDragHelperCallBack extends ItemTouchHelper.Callback {
      */
     @Override
     public boolean onMove(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder, RecyclerView.ViewHolder target) {
+        //不同Type之间不允许移动
         if (viewHolder.getItemViewType() != target.getItemViewType()) {
             return false;
         }
