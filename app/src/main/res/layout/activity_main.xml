@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_long_drag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:background="@drawable/tag_shape"
+            android:text="长按拖拽示例"
+            android:onClick="onLongDragListener"
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/tv_swipe_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/tag_shape"
+            android:padding="8dp"
+            android:onClick="onSwipeDeleteListener"
+            android:text="滑动删除示例"
+            android:textSize="22sp" />
+
+    </LinearLayout>
+
+</RelativeLayout>
