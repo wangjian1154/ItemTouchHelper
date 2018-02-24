@@ -31,8 +31,8 @@ public class ItemSwipeHelperCallBack extends ItemTouchHelper.Callback {
         RecyclerView.LayoutManager manager = recyclerView.getLayoutManager();
         int swipeFlags = 0;
         if (manager instanceof LinearLayoutManager) {
-            //线性布局管理器允许上下滑动
-            swipeFlags = ItemTouchHelper.UP | ItemTouchHelper.DOWN;
+            //线性布局管理器只允许从右向左滑动
+            swipeFlags = ItemTouchHelper.LEFT;
         }
         return makeMovementFlags(0, swipeFlags);
     }
@@ -62,4 +62,5 @@ public class ItemSwipeHelperCallBack extends ItemTouchHelper.Callback {
             onItemSwipeListener.onItemSwiped(viewHolder.getAdapterPosition());
         }
     }
+
 }
